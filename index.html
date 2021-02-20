@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="build/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="build/slick/slick-theme.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__plus">
+                <img src="build/images/02.png" alt="">
+            </div>
+            <div class="header__triangle">
+                <img src="build/images/-02.png" alt="">
+            </div>
+            <div class="header__block">
+                <h2 class="header__featur">our featured work</h2>
+                <h1 class="header__creativity">We create engaging experiences through creativity & craft</h1>
+            </div>
+            <div class="header__class">
+                <div class="header__img">
+                    <img src="build/images/03.png" class="one" alt="1">
+                    <h1 class="header__subtittle">
+                        Apex Magazine
+                        <br> June Issue
+                    </h1>
+                    <address class="header__address">by Fabrizio Morra</address>
+                </div>
+                <img src="build/images/04.png" alt="2">
+                <img src="build/images/05.png" alt="3">
+                <img src="build/images/06.png" class="five" alt="4">
+                <img src="build/images/03.png" class="one" alt="5">
+            </div>
+        </div>
+    </header>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="build/slick/slick.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.header__class').slick({
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                // autoplay: true,
+                arrows: true,
+                prevArrow: "<img src='build/images/-01.png' class='prev' alt='1'>",
+                nextArrow: "<img src='build/images/01.png' class='next' alt='2'>",
+
+            });
+
+            var filtered = false;
+
+            $('.js-filter').on('click', function() {
+                if (filtered === false) {
+                    $('.filtering').slick('slickFilter', ':even');
+                    $(this).text('Unfilter Slides');
+                    filtered = true;
+                } else {
+                    $('.filtering').slick('slickUnfilter');
+                    $(this).text('Filter Slides');
+                    filtered = false;
+                };
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
